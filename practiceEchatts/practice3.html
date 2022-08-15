@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 800px;
+            height: 800px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- svg Scalable Vector Graphics  可缩放的矢量图形-->
+    <svg class="box">
+        <!-- //线 -->
+        <line x1="100" y1="100" x2="200" y2="200" stroke="red"></line>
+        <line x1="100" y1="200" x2="200" y2="100" stroke="red"></line>
+        <!-- 折线   根据点的XY 坐标去连接, 自动填充,可以设置透明度,线颜色 -->
+        <polyline points="300 300,50 100, 120 400 ,20,20" fill-opacity="0" stroke="cyan"></polyline>
+        <!-- 矩形-->
+        <rect x="400" y="400" width="150" height="50" fill="pink"></rect>
+        <!-- 圆 -->
+         <circle cx="370" cy="95" r="50" style="stroke:rgb(68, 11, 101); fill:rgb(112, 184, 185)"></circle>
+        <!-- 椭圆 -->
+        <ellipse cx="370" cy="200" rx="60" ry="30" style="fill:none;" stroke="black"></ellipse>
+    </svg>
+</body>
+</html>

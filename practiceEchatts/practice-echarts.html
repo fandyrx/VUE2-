@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.引入 -->    
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.1.2/echarts.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<!-- 2.提供容器 -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
+<script>
+    // 3.获取容器，实例化echarts实例
+    let dom1 =document.querySelector('.box1');
+    let dom2 =document.querySelector('.box2');
+
+    let myCharts1 = echarts.init(dom1)
+    let myCharts2 = echarts.init(dom2)
+    //指定图形的配置项和数据
+    myCharts1.setOption({
+        
+        //图标标题
+        title:{
+            text:'数据可视化',
+            subtext:'echarts基本使用',
+            left:"center"
+        },
+        //x轴配置
+        xAxis:{
+           data:['衣服','直播','游戏','电影','生活'],
+           
+        },
+        //y轴配置
+        yAxis:{
+            //显示y轴
+            axisLine:{
+                show:true
+            },
+            //显示y刻度
+            axisTick:{
+                show:true,
+            }
+        },
+        //系列设置
+        series:[
+            {      //图表类型 pie 饼状  line 线  bar 柱状
+                type:'bar',
+                //图标数据
+                data:[10,20,30,40],
+                //颜色
+                color:'pink'
+            },
+            {
+                type:'line',
+                data:[10,20,30,50]
+            }
+        ]
+    })
+
+    myCharts2.setOption({
+        title:{
+            text:'折线图',
+            left:'center',
+            textStyle:{
+                color:"red"
+            },
+            subtext:'echarts使用',
+            subtextStyle:{
+                color:'blue'
+            }
+        },
+        xAxis:{
+            data:[1,2,3,4]
+        },
+        yAxis:{
+           axisLine:{
+            show:'true',
+        },
+            axisTick:{
+                show:"true"
+            }
+        },
+        series:[          
+             { 
+            type:'bar',
+            data:[10,20,3,4,5],
+            color:'skyblue'
+        },
+        {
+            type:'pie',
+            data:[{name:'x',value:10},{name:'y',value:20},{name:'z',value:3},{name:'a',value:4}
+           ,{name:'b',value:5}],
+           width:'150',
+           height:'150',
+           left:'150',
+           top:'80',
+           radius:'20'
+        }
+    ],
+      
+
+    })
+</script>

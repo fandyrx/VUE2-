@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="800"> </canvas>
+</body>
+
+<script>
+    let canvas = document.querySelector('canvas');
+    let ctx = canvas.getContext('2d')
+        //1.线
+    ctx.moveTo(100,100) //起点
+    ctx.lineTo(100,200) //终点
+    ctx.lineTo(200,100) //终点
+    ctx.closePath() //起点连接所有终点
+    //图形填充颜色  全局作用？
+    // ctx.fillStyle="skyblue"   
+    // ctx.fill()
+    //线颜色 
+    ctx.strokeStyle = "red"
+    ctx.lineWidth = "20"// 粗
+    ctx.stroke();  //绘制
+
+    //2.矩形 线性描边，
+    ctx.strokeRect(200,200,100,200) //距离左上角 x,y 坐标 图形width,height
+   
+    //自动填充矩形 不含边
+    ctx.fillStyle = "pink"//填充颜色 没写则 默认黑色
+    ctx.fill();
+    ctx.fillRect(300,200,100,200)
+    
+    //3.圆
+    ctx.beginPath(); 
+    //x,y,r 半径，起始弧度，结束弧度,是否逆时针绘制
+    //360° = 2 * PI 
+    ctx.arc(400,400,50,0,2*Math.PI,true)
+    ctx.lineWidth = "1"
+    ctx.strokeStyle = "black"
+    //绘制
+    ctx.stroke();
+</script>
+</html>
