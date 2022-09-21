@@ -1,7 +1,7 @@
 # Vue2-backend-finished
 Vue2 尚品汇后台
 
-bug:1. 登录页 addroute 路由重复未修改,有空再做
+bug:1. 登录页 addroute 路由重复未修改,有空再做(修复)
 
   
 2.项目场景：尚硅谷后台管理系统首页使用的是本地mock的数据，即data.json文件中的数据。
